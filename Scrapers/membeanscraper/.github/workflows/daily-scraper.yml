@@ -1,0 +1,75 @@
+name: Membean Scraper
+
+on:
+  schedule:
+    # Run every hour on the hour
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-membean:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          xvfb \
+          libnss3 \
+          libnspr4 \
+          libatk-bridge2.0-0 \
+          libdrm2 \
+          libxkbcommon0 \
+          libgtk-3-0 \
+          libgbm1 \
+          libasound2t64 \
+          libxrandr2 \
+          libxcomposite1 \
+          libxdamage1 \
+          libxss1 \
+          libatspi2.0-0
+        
+    - name: Install Playwright Chromium only
+      env:
+        PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS: true
+      run: |
+        playwright install chromium
+        
+    - name: Run scraper
+      env:
+        MEMBEAN_USERNAME: ${{ secrets.MEMBEAN_USERNAME }}
+        MEMBEAN_PASSWORD: ${{ secrets.MEMBEAN_PASSWORD }}
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        CI: true
+        PLAYWRIGHT_BROWSERS_PATH: /home/runner/.cache/ms-playwright
+        PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS: true
+      run: |
+        python membean_scraper.py
+        
+    - name: Commit and push data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        git diff --staged --quiet || git commit -m "Automated data update - $(date)"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

@@ -1,0 +1,291 @@
+{
+  "timestamp": "2025-05-14T11:24:34.569783",
+  "students": {
+    "3975157": {
+      "name": "Attia, Olivia",
+      "current_data": {
+        "level": "1 - High School",
+        "level_sort": 31,
+        "words_seen": 288,
+        "last_trained": "May 07, 2025"
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "60%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 9,
+          "accuracy": "55%",
+          "dubious_minutes": 2,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4023974": {
+      "name": "Chandrakumar, Hasini",
+      "current_data": {
+        "level": "1 - High School",
+        "level_sort": 31,
+        "words_seen": 52,
+        "last_trained": "Apr 22, 2025"
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4032772": {
+      "name": "Chelani, Ridhima",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4023971": {
+      "name": "Fass, Lawson",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4023973": {
+      "name": "Ford, Layla",
+      "current_data": {
+        "level": "2 - High School",
+        "level_sort": 32,
+        "words_seen": 64,
+        "last_trained": "May 02, 2025"
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "3975294": {
+      "name": "Gupta, Keyen",
+      "current_data": {
+        "level": "2 - High School",
+        "level_sort": 32,
+        "words_seen": 235,
+        "last_trained": "Feb 24, 2025"
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4037039": {
+      "name": "Jagadeesan, Jashwanth",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4035850": {
+      "name": "Koya, Dilan",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4035845": {
+      "name": "Koya, Jaiden",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4024262": {
+      "name": "Parelly, Geetesh",
+      "current_data": {
+        "level": "1 - High School",
+        "level_sort": 31,
+        "words_seen": 20,
+        "last_trained": "May 10, 2025"
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": true,
+          "goal_progress": "0%",
+          "fifteen_min_days": 1,
+          "minutes_trained": 15,
+          "accuracy": "100%",
+          "dubious_minutes": 0,
+          "skipped_words": 8,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4032800": {
+      "name": "Vudumu, Shrika",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4032910": {
+      "name": "Vudumu, Sloka",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    },
+    "4021791": {
+      "name": "Williams, Zara",
+      "current_data": {
+        "level": "Not Calibrated",
+        "level_sort": 0,
+        "words_seen": 0,
+        "last_trained": ""
+      },
+      "tabs_data": {
+        "Reports": {
+          "goal_met": false,
+          "goal_progress": "0%",
+          "fifteen_min_days": 0,
+          "minutes_trained": 0,
+          "accuracy": "0%",
+          "dubious_minutes": 0,
+          "skipped_words": 0,
+          "new_words": 0,
+          "assessment_score": ""
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+playwright==1.42.0
+python-dotenv==1.0.1
+python-decouple==3.8
+supabase==1.2.0 

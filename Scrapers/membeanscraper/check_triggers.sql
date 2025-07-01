@@ -1,0 +1,1 @@
+SELECT event_object_table AS table_name, trigger_name, event_manipulation AS event, action_timing AS activation, action_statement FROM information_schema.triggers WHERE event_object_table = 'membean_students';
