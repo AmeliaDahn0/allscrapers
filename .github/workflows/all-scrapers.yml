@@ -98,6 +98,16 @@ jobs:
         run: |
           cd Scrapers/membeanscraper
           python membean_scraper.py
+      - name: Commit and push data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Scrapers/membeanscraper/data/
+          git diff --staged --quiet || git commit -m "Automated data update - $(date)"
+          git pull --rebase origin main
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload debug artifacts (if any)
         if: always()
         uses: actions/upload-artifact@v4
