@@ -27,15 +27,18 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
+        cd Scrapers/alphareadscraper
         pip install -r requirements.txt
         
     - name: Install Playwright browsers
       run: |
+        cd Scrapers/alphareadscraper
         playwright install chromium
         playwright install-deps chromium
         
     - name: Create .env file
       run: |
+        cd Scrapers/alphareadscraper
         cat > .env << EOF
         ALPHAREAD_EMAIL=${{ secrets.ALPHAREAD_EMAIL }}
         ALPHAREAD_PASSWORD=${{ secrets.ALPHAREAD_PASSWORD }}
@@ -45,6 +48,7 @@ jobs:
         
     - name: Run scraper
       run: |
+        cd Scrapers/alphareadscraper
         python scraper.py 
 
 # Trigger re-index for GitHub Actions schedule 
