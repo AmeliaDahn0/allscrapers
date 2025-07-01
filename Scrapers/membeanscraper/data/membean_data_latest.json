@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-01T14:26:09.167859",
+  "timestamp": "2025-07-01T15:14:55.404078",
   "url": "https://membean.com/tclasses/345817?start_date=2025-07-01T05%3A00%3A00.000Z&end_date=2025-07-02T04%3A59%3A59.999Z#reports",
   "students": {
     "3975157": {
@@ -56,14 +56,14 @@
       },
       "tabs_data": {
         "Reports": {
-          "goal_met": false,
-          "goal_progress": "7%",
-          "fifteen_min_days": 0,
-          "minutes_trained": 1,
-          "accuracy": "67%",
+          "goal_met": true,
+          "goal_progress": "0%",
+          "fifteen_min_days": 1,
+          "minutes_trained": 15,
+          "accuracy": "81%",
           "dubious_minutes": 0,
           "skipped_words": 0,
-          "new_words": 0,
+          "new_words": 3,
           "assessment_score": ""
         }
       }
