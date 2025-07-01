@@ -1,0 +1,144 @@
+name: All Scrapers Unified
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:
+
+jobs:
+  alpharead:
+    name: AlphaRead Scraper
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          cd Scrapers/alphareadscraper
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install Playwright browsers
+        run: |
+          cd Scrapers/alphareadscraper
+          playwright install chromium
+          playwright install-deps chromium
+      - name: Create .env file
+        run: |
+          cd Scrapers/alphareadscraper
+          cat > .env << EOF
+          ALPHAREAD_EMAIL=${{ secrets.ALPHAREAD_EMAIL }}
+          ALPHAREAD_PASSWORD=${{ secrets.ALPHAREAD_PASSWORD }}
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}
+          EOF
+      - name: Run scraper
+        run: |
+          cd Scrapers/alphareadscraper
+          python scraper.py
+      - name: Upload debug artifacts (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpharead-debug-screenshots
+          path: Scrapers/alphareadscraper/debug_*.png
+          retention-days: 7
+
+  membean:
+    name: Membean Scraper
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          cd Scrapers/membeanscraper
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            xvfb \
+            libnss3 \
+            libnspr4 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxkbcommon0 \
+            libgtk-3-0 \
+            libgbm1 \
+            libasound2t64 \
+            libxrandr2 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxss1 \
+            libatspi2.0-0
+      - name: Install Playwright Chromium only
+        env:
+          PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS: true
+        run: |
+          cd Scrapers/membeanscraper
+          playwright install chromium
+      - name: Run scraper
+        env:
+          MEMBEAN_USERNAME: ${{ secrets.MEMBEAN_USERNAME }}
+          MEMBEAN_PASSWORD: ${{ secrets.MEMBEAN_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          CI: true
+          PLAYWRIGHT_BROWSERS_PATH: /home/runner/.cache/ms-playwright
+          PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS: true
+        run: |
+          cd Scrapers/membeanscraper
+          python membean_scraper.py
+      - name: Upload debug artifacts (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: membean-debug-screenshots
+          path: Scrapers/membeanscraper/debug_*.png
+          retention-days: 7
+
+  mathacademy:
+    name: Math Academy Scraper
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          cd Scrapers/mathacademyscraper
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install Playwright browsers
+        run: |
+          cd Scrapers/mathacademyscraper
+          playwright install chromium
+          playwright install-deps chromium
+      - name: Run scraper
+        env:
+          MATH_ACADEMY_USERNAME: ${{ secrets.MATH_ACADEMY_USERNAME }}
+          MATH_ACADEMY_PASSWORD: ${{ secrets.MATH_ACADEMY_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          cd Scrapers/mathacademyscraper
+          python scraper.py
+      - name: Upload debug artifacts (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mathacademy-debug-screenshots
+          path: Scrapers/mathacademyscraper/debug_*.png
+          retention-days: 7 
